@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app {
+    height: 100vh;
+    background-color: #111b21;
+}
+
+.whatsapp-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #222e35;
+}
+
+/* Стили для левой панели */
+.sidebar {
+    width: 30%;
+    min-width: 300px;
+    max-width: 450px;
+    background: #111b21;
+    border-right: 1px solid #2f3b43;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 10px 16px;
+    background: #202c33;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.new-chat-button {
+    background: #00a884;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-container {
+    display: none;
+}
+
+.chats-list {
+    flex: 1;
+    overflow-y: auto;
+    background: #111b21;
+}
+
+.chat-item {
+    display: flex;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #222d34;
+    align-items: center;
+}
+
+.chat-item:hover {
+    background: #202c33;
+}
+
+.chat-item.active {
+    background: #2a3942;
+}
+
+.chat-avatar {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-name {
+    color: #e9edef;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.chat-last-message {
+    color: #8696a0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #0b141a;
+}
+
+.chat-header {
+    padding: 10px 16px;
+    background: #202c33;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.chat-contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contact-name {
+    color: #e9edef;
+    font-size: 16px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #0b141a;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.message {
+    max-width: 65%;
+    margin: 8px 0;
+    padding: 6px 7px 8px 9px;
+    border-radius: 7.5px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.message.sent {
+    background: #005c4b;
+    color: #e9edef;
+    margin-left: auto;
+    border-top-right-radius: 0;
+}
+
+.message.received {
+    background: #202c33;
+    color: #e9edef;
+    margin-right: auto;
+    border-top-left-radius: 0;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-text {
+    font-size: 14.2px;
+    margin-right: 40px;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #8696a0;
+    margin-top: 2px;
+    text-align: right;
+}
+
+.chat-input {
+    padding: 5px 16px;
+    background: #202c33;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 9px 12px;
+    background: #2a3942;
+    border: none;
+    border-radius: 8px;
+    color: #d1d7db;
+    font-size: 15px;
+}
+
+.chat-input input::placeholder {
+    color: #8696a0;
+}
+
+.send-button {
+    background: #00a884;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.welcome-screen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222e35;
+    color: #e9edef;
+}
+
+.welcome-content {
+    text-align: center;
+}
+
+.welcome-content h1 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+
+.welcome-content p {
+    color: #8696a0;
+    font-size: 14px;
+}
+
+/* Стили для диалога нового чата */
+.new-chat-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 20, 26, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    background: #111b21;
+    padding: 20px;
+    border-radius: 3px;
+    width: 400px;
+    color: #d1d7db;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dialog-header button {
+    background: none;
+    border: none;
+    color: #8696a0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dialog-body input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    background: #2a3942;
+    border: 1px solid #2f3b43;
+    border-radius: 4px;
+    color: #d1d7db;
+}
+
+.dialog-body button {
+    width: 100%;
+    padding: 8px;
+    background: #00a884;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Стили для формы входа */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111b21;
+}
+
+.login-container form {
+    background: #202c33;
+    padding: 30px;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    color: #e9edef;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #2a3942;
+    border: 1px solid #2f3b43;
+    border-radius: 4px;
+    color: #d1d7db;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #00a884;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.error {
+    color: #f15c6d;
+    margin-bottom: 15px;
+    text-align: center;
+}
