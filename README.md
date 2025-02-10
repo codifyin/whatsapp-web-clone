@@ -58,12 +58,9 @@ The application will open in your default browser at `http://localhost:5000`
 ## Usage
 
 1. Launch the application and enter your Green API credentials
-   ![alt text](image.png)
 2. Click "New Chat" to start a new conversation
 3. Enter the recipient's phone number in international format (e.g., 77071234567)
-   ![alt text](image-2.png)
 4. Start sending messages!
-   ![alt text](image-3.png)
 
 ## Project Structure
 
